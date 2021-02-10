@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core'
+import { Subject } from 'rxjs'
 
 @Injectable()
 export class EventService {
   getEvents() {
-    return EVENTS
+    let subject = new Subject()
+    setTimeout(() => {subject.next(EVENTS); subject.complete();},100) // we subscribe to the events and it gets all of the events after a set time of seconds
+    return subject
   }
   getEvent(id:number){
     return EVENTS.find(event=> event.id == id);

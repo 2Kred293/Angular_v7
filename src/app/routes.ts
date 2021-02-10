@@ -12,5 +12,6 @@ export const appRoutes:Routes = [
     {path: 'events/:id', component: EventDetailsComponent, canActivate: [EventRouteActivator]},
     {path: '', redirectTo: '/events', pathMatch: 'full'},
     // event path set is referenced in other files using the router module or routerLink, this is an easier method compared to href
-    {path: '404', component:Error404Component}
+    {path: '404', component:Error404Component},
+    {path: 'user', loadChildren: './user/user.module#UserModule'}
 ]

@@ -6,7 +6,7 @@ import { template } from '@angular/core/src/render3';
   selector: 'events-app',
   template: `
     <nav-bar></nav-bar>
-    <events-list></events-list>
+    <router-outlet></router-outlet>
   `
   
 

@@ -5,7 +5,7 @@ import { ToastrService } from '../common/toastr.service'
 declare let toastr
 
 @Component({
-  selector: 'events-list',
+  
   providers:[ToastrService],
   template: `
   <div>

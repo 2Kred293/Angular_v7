@@ -7,11 +7,14 @@ import { EventThumbnailComponent } from './events/event-thumbnail.component'
 import { NavBarComponent } from './nav/nav-bar.component'
 import { EventService } from './events/shared/event.service'
 import { EventDetailsComponent } from './events/event-details/event-details.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
 
 
 @NgModule({
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(appRoutes)
   ],
   declarations: [
     EventsAppComponent,

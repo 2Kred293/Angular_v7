@@ -7,9 +7,11 @@
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav">
           <li>
-            <a [routerLink] = "['/events']">All Events</a>
+            <a [routerLink] = "['/events']" routerLinkActive = "active" [routerLinkActiveOptions] = "{exact:true}">All Events</a>
+             <!-- routerLinkactive shows which link is active on the nav bar and routerLinkActiveOptions tells the browser that
+               only if the url is exactly the /events , will the nav bar element be highlighted. We set color for this in the nav bar component -->
           </li>
-          <li><a [routerLink] = "['/events/new']">Create Event</a></li>
+          <li><a [routerLink] = "['/events/new']" routerLinkActive = "active" >Create Event</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
               Events

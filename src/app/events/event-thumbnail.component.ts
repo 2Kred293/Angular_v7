@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core'
 
+declare let toastr 
 @Component({
   selector: 'event-thumbnail',
   template: `
@@ -22,6 +23,7 @@ import { Component, Input } from '@angular/core'
     </div>
   `,
   styles: [`
+  .green {}
     .thumbnail { min-height: 210px; }
     .pad-left { margin-left: 10px; }
     .well div { color: #bbb; }
@@ -35,4 +37,5 @@ export class EventThumbnailComponent {
       return {color: '#003300', 'font-weight': 'bold'}
     return {}
   }
+  
 } 

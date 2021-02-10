@@ -4,7 +4,7 @@ import {EventDetailsComponent} from './events/event-details/event-details.compon
 import { CreateEventComponent } from './events/create-event.component'
 import { Error404Component } from './errors/404.components'
 import { EventRouteActivator } from './events/event-details/event-route-activator.service'
-import { EventListResolver } from './events/event-list-resolver.service'
+import { EventListResolver } from './events/events-list-resolver.service'
 
 export const appRoutes:Routes = [
     {path: 'events/new', component: CreateEventComponent, canDeactivate: ['canDeactivateCreateEvent']}, // moved to the top so brower doesn't confuse with events/:id, only goes here if url shows new

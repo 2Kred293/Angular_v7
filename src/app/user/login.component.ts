@@ -1,20 +1,29 @@
 import {Component} from '@angular/core'
-import {Router} from '@angular/router'
+import { Router } from '@angular/router'
+import { AuthService} from './auth.service'
 
 @Component({
-    templateUrl:'./login.component.html'
+    templateUrl:'./login.component.html',
+    styles: [   `
+        em  {float:right; color: #E05C65; padding-left:10px;}
+    `
+    ]
 })
 
 export class LoginComponent{
     username
     password
-    constructor (private router:Router){
+    constructor (private authService: AuthService, private router:Router){
 
     }
 
      login(formvalues) {
-        console.log(formvalues)
+       this.authService.loginUser(formvalues.userName, formvalues.password)
+       this.router.navigate (['events'])
         
+    }
+    cancel() {
+        this.router.navigate (['events'])
     }
 
 }

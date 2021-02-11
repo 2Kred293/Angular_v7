@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core'
+import { IEvent} from './shared/index'
 
 declare let toastr 
 @Component({
@@ -12,7 +13,7 @@ declare let toastr
   `]
 })
 export class EventThumbnailComponent {
-  @Input() event:any
+  @Input() event:IEvent
 
   getStartTimeStyle():any {
     if (this.event && this.event.time === '8:00 am')

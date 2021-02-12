@@ -20,7 +20,7 @@ export class AuthService{
         return !!this.currentUser;
     }
 
-    updateCurrentUSer(firstName:string, lastName:string){
+    updateCurrentUser(firstName:string, lastName:string){
         this.currentUser.firstName = firstName
         this.currentUser.lastName = lastName
     }

@@ -22,6 +22,7 @@ import { Error404Component } from './errors/404.components';
 import { ToastrService } from './common/toastr.service';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CollapsibleWellComponent } from './common/collapsible-well.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CreateEventComponent,
     Error404Component,
     CreateSessionComponent,
-    SessionListComponent
+    SessionListComponent,
+    CollapsibleWellComponent
   ],
   providers:
    [
@@ -48,6 +50,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       EventRouteActivator,
       ToastrService,
       AuthService,
+      
       {
         provide: 'canDeactivateCreateEvent',
         useValue: checkDirtyState

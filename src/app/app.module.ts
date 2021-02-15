@@ -20,11 +20,12 @@ import { NavBarComponent } from './nav/nav-bar.component'
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { Error404Component } from './errors/404.components';
-import { ToastrService } from './common/toastr.service';
+import { TOATSR_TOKEN, Toastr } from './common/toastr.service';
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CollapsibleWellComponent } from './common/collapsible-well.component';
 
+declare let toastr:Toastr
 
 @NgModule({
   imports: [
@@ -50,7 +51,7 @@ import { CollapsibleWellComponent } from './common/collapsible-well.component';
    [
       EventService, 
       EventRouteActivator,
-      ToastrService,
+      {provide: TOATSR_TOKEN, useValue: toastr},
       AuthService,
       
       {

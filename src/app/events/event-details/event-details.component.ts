@@ -3,7 +3,7 @@ import { style } from '@angular/animations'
 import { Component } from '@angular/core'
 import {EventService } from '../shared/event.service'
 
-import { ActivatedRoute } from '@angular/router'
+import { ActivatedRoute, Params } from '@angular/router'
 import { IEvent, ISession} from '../shared/index'
 @Component({
 
@@ -28,9 +28,11 @@ export class EventDetailsComponent{
     }
 
     ngOnInit() {
-        this.event = this.eventService.getEvent(+this.route.snapshot.params['id'])
-
-    }
+        this.route.params.forEach((params: Params) => {
+            this.event = this.eventService.getEvent(+params['id']);  // this helps fix the bug which was preventing the routing thourgh searches.
+            this.addMode = false; // without this, the addmode will be true even while routing to other pages (addmode - add session page)
+    })
+}
 
     addSession(){
         this.addMode = true

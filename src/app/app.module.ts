@@ -20,7 +20,12 @@ import { NavBarComponent } from './nav/nav-bar.component'
 import { RouterModule } from '@angular/router';
 import { appRoutes } from './routes';
 import { Error404Component } from './errors/404.components';
-import {TOATSR_TOKEN, Toastr, CollapsibleWellComponent, JQ_TOKEN, SimpleModalComponent } from './common/index'
+import {TOATSR_TOKEN, 
+        Toastr, 
+        CollapsibleWellComponent,
+        JQ_TOKEN,
+        SimpleModalComponent,
+        ModalTriggerDirective } from './common/index'
 import { AuthService } from './user/auth.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
@@ -47,7 +52,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SessionListComponent,
     CollapsibleWellComponent,
     DurationPipe,
-    SimpleModalComponent
+    SimpleModalComponent,
+    ModalTriggerDirective
   ],
   providers:
    [

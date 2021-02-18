@@ -36,7 +36,7 @@ export class SimpleModalComponent {
 
   closeModal() {
     if(this.closeOnBodyClick.toLocaleLowerCase() === 'true'){
-    this.$(this.containerEl.nativeElement).modal('Hide'); // way of accessing dom node in an easy manner this element will refer to the modalcontainer set in the html.
+    this.$(this.containerEl.nativeElement).modal('hide'); // way of accessing dom node in an easy manner this element will refer to the modalcontainer set in the html.
   }
 }
 }

@@ -1,4 +1,4 @@
-import { from } from "rxjs";
+
 import {Injectable} from '@angular/core'
 import {IUser} from './user.model'
 
@@ -9,9 +9,10 @@ export class AuthService{
     loginUser (userName:string, password: string){
         this.currentUser = {
             id: 1,
+            userName: userName,
             firstName: 'john',
-            lastName: 'papa',
-            userName: userName
+            lastName: 'papa'
+           
         }
 
     }

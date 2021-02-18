@@ -11,7 +11,9 @@ import {
   EventListResolver,
   CreateSessionComponent,
   SessionListComponent,
-  DurationPipe
+  DurationPipe,
+  UpvoteComponent,
+  VoterService
   
 } from './events/index'
 
@@ -53,6 +55,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CollapsibleWellComponent,
     DurationPipe,
     SimpleModalComponent,
+    UpvoteComponent,
     ModalTriggerDirective
   ],
   providers:
@@ -62,6 +65,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       {provide: TOATSR_TOKEN, useValue: toastr},
       {provide: JQ_TOKEN, useValue: jQuery},
       AuthService,
+      VoterService,
       
       {
         provide: 'canDeactivateCreateEvent',

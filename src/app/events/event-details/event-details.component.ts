@@ -28,9 +28,9 @@ export class EventDetailsComponent{
     }
 
     ngOnInit() {
-        this.route.params.forEach((params: Params) => {
-            this.event = this.eventService.getEvent(+params['id']);  // this helps fix the bug which was preventing the routing thourgh searches.
-            this.addMode = false; // without this, the addmode will be true even while routing to other pages (addmode - add session page)
+        this.route.data.forEach((data) => {
+            this.event =  data ['event'];
+            this.addMode = false;      
     })
 }
 

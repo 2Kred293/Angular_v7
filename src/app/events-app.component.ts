@@ -1,6 +1,7 @@
 import { style } from '@angular/animations';
 import { Component } from '@angular/core'
 import { template } from '@angular/core/src/render3';
+import { AuthService } from './user/auth.service';
 
 @Component({
   selector: 'events-app',
@@ -13,5 +14,11 @@ import { template } from '@angular/core/src/render3';
   
 })
 export class EventsAppComponent {
-  title = 'app';
+
+  constructor(private auth: AuthService) {}
+
+  ngOnInit () {
+    this.auth.checkAuthenticationStatus();
+  }
+  
 }

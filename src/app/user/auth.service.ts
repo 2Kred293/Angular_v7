@@ -7,9 +7,10 @@ import {IUser} from './user.model'
 
 @Injectable()
 export class AuthService{
+    
 
     constructor(private http:HttpClient) {}
-
+//----------------------------------------------------------------------------
     currentUser:IUser
     loginUser (userName:string, password: string){
 
@@ -23,16 +24,25 @@ export class AuthService{
         .pipe(catchError(err => {
             return of(false)
           }))
-  
-
     }
-
+//----------------------------------------------------------------------------
     isAuthenticated() {
         return !!this.currentUser;
     }
-
+//----------------------------------------------------------------------------
+    checkAuthenticationStatus() {
+      this.http.get('/api/currentIdentity')
+      .pipe(tap(data => {
+        if(data instanceof Object) {
+          this.currentUser = <IUser>data;
+        }
+      }))
+      .subscribe(); // either subscribe or tap can be use here, so check out advantages of both
+    }
+//----------------------------------------------------------------------------
     updateCurrentUser(firstName:string, lastName:string){
         this.currentUser.firstName = firstName
         this.currentUser.lastName = lastName
     }
 }
+//----------------------------------------------------------------------------
